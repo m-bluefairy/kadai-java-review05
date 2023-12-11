@@ -32,10 +32,8 @@ public class Review05 {
 
        System.out.print("検索キーワードを入力してください > ");
        String input = keyIn();
-
-       // PreparedStatementオブジェクトにセット
-       spstmt.setString(1,input);
        int id = Integer.parseInt(input);
+       spstmt.setInt(1,id);
 
        // 5, 6. Select文の実行と結果を格納／代入
        rs = spstmt.executeQuery();

@@ -27,7 +27,7 @@ public class Review05 {
              );
        // 4. DBとやりとりする窓口（PreparedStatementオブジェクト）の作成
        // 検索用SQLおよび検索用PreparedStatementオブジェクトを取得
-       String selectSql = "SELECT * FROM person where id= ?";
+       String selectSql = "SELECT * FROM person where id = ?";
        spstmt = con.prepareStatement(selectSql);
 
        System.out.print("検索キーワードを入力してください > ");
@@ -35,6 +35,7 @@ public class Review05 {
 
        // PreparedStatementオブジェクトにセット
        spstmt.setString(1,input);
+       int id = Integer.parseInt(input);
 
        // 5, 6. Select文の実行と結果を格納／代入
        rs = spstmt.executeQuery();
